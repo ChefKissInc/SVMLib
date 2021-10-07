@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 publish = false
 authors = ["VisualDevelopment"]
-license = "CC BY-NC-ND 4.0"
+license-file = "LICENSE"
 
 [profile.dev]
 lto = "thin"

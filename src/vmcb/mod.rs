@@ -1,14 +1,31 @@
-#![allow(clippy::must_use_candidate, clippy::map_unwrap_or)]
+#![allow(
+clippy::must_use_candidate,
+clippy::map_unwrap_or,
+clippy::unnecessary_cast,
+clippy::cast_possible_truncation
+)]
 
-mod vmcb_control;
+use amd64::registers::msr::Msr;
 
-use packed_struct::prelude::*;
-pub use vmcb_control::*;
+pub use control::*;
+pub use ssa::*;
 
-#[derive(PackedStruct, Debug, PartialEq)]
-#[packed_struct(bit_numbering = "msb0", endian = "lsb")]
-#[allow(clippy::struct_excessive_bools, clippy::used_underscore_binding)]
+mod control;
+mod ssa;
+
+#[repr(C, packed)]
+#[derive(Debug, Default)]
 pub struct Vmcb {
-    #[packed_field(bits = "0..", size_bytes="0x400")]
     pub control: VmcbControl,
+    pub save_state: VmcbStateSave,
+}
+
+impl Vmcb {
+    pub fn set_pat(&mut self, pat_val: amd64::registers::msr::Pat) {
+        if self.control.nested_paging() {
+            self.save_state.set_guest_pat(pat_val);
+        } else {
+            unsafe { pat_val.write() };
+        }
+    }
 }

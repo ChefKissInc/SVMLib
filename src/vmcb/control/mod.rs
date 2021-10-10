@@ -86,6 +86,7 @@ pub struct VmcbControl {
     pub msrpm_base: B52,
     pub tsc_offset: u64,
     pub guest_asid: u32,
+    #[bits = 8]
     pub tlb_control: TlbControl,
     #[skip]
     __: B24,
@@ -140,19 +141,13 @@ pub struct VmcbControl {
     pub virt_vmsave_vmload: bool,
     #[skip]
     __: B62,
+    #[bits = 32]
     pub vmcb_clean_bits: VmcbCleanField,
     #[skip]
     __: B32,
     pub next_rip: u64,
     pub n_bytes_fetched: u8,
-    pub guest_inst_bytes_0: B128,
-    pub guest_inst_bytes_1: B128,
-    pub guest_inst_bytes_2: B128,
-    pub guest_inst_bytes_3: B128,
-    pub guest_inst_bytes_4: B128,
-    pub guest_inst_bytes_5: B128,
-    pub guest_inst_bytes_6: B128,
-    pub guest_inst_bytes_7: B64,
+    pub guest_inst_bytes: B120,
     #[skip]
     __: B12,
     pub avic_apic_backing_page_ptr: B40,

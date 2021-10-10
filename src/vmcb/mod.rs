@@ -1,8 +1,8 @@
 #![allow(
-clippy::must_use_candidate,
-clippy::map_unwrap_or,
-clippy::unnecessary_cast,
-clippy::cast_possible_truncation
+    clippy::must_use_candidate,
+    clippy::map_unwrap_or,
+    clippy::unnecessary_cast,
+    clippy::cast_possible_truncation
 )]
 
 use amd64::registers::msr::Msr;

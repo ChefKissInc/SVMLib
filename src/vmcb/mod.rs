@@ -11,7 +11,6 @@
 )]
 
 use amd64::registers::msr::Msr;
-
 pub use control::*;
 pub use ssa::*;
 

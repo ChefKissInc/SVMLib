@@ -3,9 +3,8 @@
  * This project is licensed by the Creative Commons Attribution-NoCommercial-NoDerivatives licence.
  */
 
-use modular_bitfield::prelude::*;
-
 pub use clean_bits::*;
+use modular_bitfield::prelude::*;
 pub use tlb_control::*;
 
 mod clean_bits;

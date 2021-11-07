@@ -4,7 +4,6 @@
  */
 
 use modular_bitfield::prelude::*;
-
 pub use selector::*;
 
 mod selector;

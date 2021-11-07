@@ -4,7 +4,7 @@
  */
 
 #![no_std]
-#![deny(warnings, clippy::cargo, unused_extern_crates)]
+#![deny(warnings, clippy::cargo, unused_extern_crates, rust_2021_compatibility)]
 #![feature(asm)]
 #![feature(derive_default_enum)]
 

@@ -3,6 +3,8 @@
  * This project is licensed by the Creative Commons Attribution-NoCommercial-NoDerivatives licence.
  */
 
+#![allow(clippy::module_name_repetitions, clippy::return_self_not_must_use)]
+
 pub use clean_bits::*;
 use modular_bitfield::prelude::*;
 pub use tlb_control::*;
@@ -12,7 +14,6 @@ mod tlb_control;
 
 #[bitfield(bits = 8192)]
 #[derive(Debug, Clone, Copy)]
-#[allow(clippy::module_name_repetitions)]
 pub struct VmcbControl {
     pub intercept_crx_read: u16,
     pub intercept_crx_write: u16,

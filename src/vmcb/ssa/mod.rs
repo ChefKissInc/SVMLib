@@ -3,6 +3,8 @@
  * This project is licensed by the Creative Commons Attribution-NoCommercial-NoDerivatives licence.
  */
 
+#![allow(clippy::module_name_repetitions, clippy::return_self_not_must_use)]
+
 use modular_bitfield::prelude::*;
 pub use selector::*;
 

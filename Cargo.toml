@@ -6,11 +6,8 @@ publish = false
 authors = ["VisualDevelopment"]
 license-file = "LICENSE"
 
-[profile.dev]
-lto = "thin"
-
 [profile.release]
-lto = "thin"
+lto = true
 
 [dependencies]
 modular-bitfield = "0.11.2"

@@ -34,7 +34,7 @@ pub struct VmcbStateSave {
     #[skip]
     __: u32,
     #[bits = 64]
-    pub efer: amd64::registers::msr::Efer,
+    pub efer: amd64::registers::msr::efer::Efer,
     #[skip]
     __: B128,
     #[skip]
@@ -88,7 +88,7 @@ pub struct VmcbStateSave {
     __: B128,
     /// Only if nested paging is enabled
     #[bits = 64]
-    pub guest_pat: amd64::registers::msr::Pat,
+    pub guest_pat: amd64::registers::msr::pat::Pat,
     /// Only of LBR virtualization is enabled
     pub debug_ctl_msr: u64,
     /// Only of LBR virtualization is enabled

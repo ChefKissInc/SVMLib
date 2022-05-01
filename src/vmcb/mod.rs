@@ -25,7 +25,7 @@ pub struct Vmcb {
 }
 
 impl Vmcb {
-    pub fn set_pat(&mut self, pat_val: amd64::registers::msr::Pat) {
+    pub fn set_pat(&mut self, pat_val: amd64::registers::msr::pat::Pat) {
         if self.control.nested_paging() {
             self.save_state.set_guest_pat(pat_val);
         } else {

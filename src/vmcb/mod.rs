@@ -1,14 +1,5 @@
-/*
- * Copyright (c) VisualDevelopment 2021-2021.
- * This project is licensed by the Creative Commons Attribution-NoCommercial-NoDerivatives licence.
- */
-
-#![allow(
-    clippy::must_use_candidate,
-    clippy::map_unwrap_or,
-    clippy::unnecessary_cast,
-    clippy::cast_possible_truncation
-)]
+//! Copyright (c) VisualDevelopment 2021-2022.
+//! This project is licensed by the Creative Commons Attribution-NoCommercial-NoDerivatives licence.
 
 use amd64::registers::msr::Msr;
 pub use control::*;

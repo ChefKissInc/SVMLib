@@ -1,16 +1,10 @@
-/*
- * Copyright (c) VisualDevelopment 2021-2021.
- * This project is licensed by the Creative Commons Attribution-NoCommercial-NoDerivatives licence.
- */
+//! Copyright (c) VisualDevelopment 2021-2022.
+//! This project is licensed by the Creative Commons Attribution-NoCommercial-NoDerivatives licence.
 
-#![allow(clippy::module_name_repetitions, clippy::return_self_not_must_use)]
-
-pub use clean_bits::*;
 use modular_bitfield::prelude::*;
-pub use tlb_control::*;
 
-mod clean_bits;
-mod tlb_control;
+pub mod clean_bits;
+pub mod tlb_control;
 
 #[bitfield(bits = 8192)]
 #[derive(Debug, Clone, Copy)]
@@ -92,7 +86,7 @@ pub struct VmcbControl {
     pub tsc_offset: u64,
     pub guest_asid: u32,
     #[bits = 8]
-    pub tlb_control: TlbControl,
+    pub tlb_control: tlb_control::TlbControl,
     #[skip]
     __: B24,
     pub virt_tpr: B4,
@@ -147,7 +141,7 @@ pub struct VmcbControl {
     #[skip]
     __: B62,
     #[bits = 32]
-    pub vmcb_clean_bits: VmcbCleanField,
+    pub vmcb_clean_bits: clean_bits::VmcbCleanField,
     #[skip]
     __: B32,
     pub next_rip: u64,

@@ -1,9 +1,5 @@
-/*
- * Copyright (c) VisualDevelopment 2021-2021.
- * This project is licensed by the Creative Commons Attribution-NoCommercial-NoDerivatives licence.
- */
-
-#![allow(clippy::module_name_repetitions, clippy::return_self_not_must_use)]
+//! Copyright (c) VisualDevelopment 2021-2022.
+//! This project is licensed by the Creative Commons Attribution-NoCommercial-NoDerivatives licence.
 
 use modular_bitfield::prelude::*;
 pub use selector::*;
@@ -14,10 +10,10 @@ mod selector;
 #[bitfield(bits = 5312)]
 #[derive(Debug, Clone, Copy)]
 pub struct VmcbStateSave {
-    pub es: VmcbSsaBase32Selector,
-    pub cs: VmcbSsaBase32Selector,
-    pub ss: VmcbSsaBase32Selector,
-    pub ds: VmcbSsaBase32Selector,
+    pub es: VmcbSsaSelector,
+    pub cs: VmcbSsaSelector,
+    pub ss: VmcbSsaSelector,
+    pub ds: VmcbSsaSelector,
     pub fs: VmcbSsaSelector,
     pub gs: VmcbSsaSelector,
     pub gdtr: VmcbGdtrIdtrSelector,

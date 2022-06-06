@@ -8,7 +8,7 @@ pub mod tlb_control;
 
 #[bitfield(bits = 8192)]
 #[derive(Debug, Clone, Copy)]
-pub struct VmcbControl {
+pub struct VMCBControl {
     pub intercept_crx_read: u16,
     pub intercept_crx_write: u16,
     pub intercept_drx_read: u16,
@@ -86,7 +86,7 @@ pub struct VmcbControl {
     pub tsc_offset: u64,
     pub guest_asid: u32,
     #[bits = 8]
-    pub tlb_control: tlb_control::TlbControl,
+    pub tlb_control: tlb_control::TLBControl,
     #[skip]
     __: B24,
     pub virt_tpr: B4,
@@ -141,7 +141,7 @@ pub struct VmcbControl {
     #[skip]
     __: B62,
     #[bits = 32]
-    pub vmcb_clean_bits: clean_bits::VmcbCleanField,
+    pub vmcb_clean_bits: clean_bits::VMCBCleanField,
     #[skip]
     __: B32,
     pub next_rip: u64,
@@ -266,7 +266,7 @@ pub struct VmcbControl {
     __: B128,
 }
 
-impl Default for VmcbControl {
+impl Default for VMCBControl {
     fn default() -> Self {
         Self::new()
     }

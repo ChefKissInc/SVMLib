@@ -9,7 +9,7 @@ use modular_bitfield::prelude::*;
 #[bitfield(bits = 128)]
 #[derive(BitfieldSpecifier, Debug, Default)]
 #[repr(u128)]
-pub struct VmcbSsaSelector {
+pub struct VMCBSSASelector {
     pub selector: u16,
     pub attrib: u16,
     pub limit: u32,
@@ -20,7 +20,7 @@ pub struct VmcbSsaSelector {
 #[bitfield(bits = 128)]
 #[derive(BitfieldSpecifier, Debug, Default)]
 #[repr(u128)]
-pub struct VmcbGdtrIdtrSelector {
+pub struct VMCBGDTRegIDTRegSelector {
     #[skip]
     __: u16,
     #[skip]

@@ -9,17 +9,17 @@ mod selector;
 /// VMCB State Save Area
 #[bitfield(bits = 5312)]
 #[derive(Debug, Clone, Copy)]
-pub struct VmcbStateSave {
-    pub es: VmcbSsaSelector,
-    pub cs: VmcbSsaSelector,
-    pub ss: VmcbSsaSelector,
-    pub ds: VmcbSsaSelector,
-    pub fs: VmcbSsaSelector,
-    pub gs: VmcbSsaSelector,
-    pub gdtr: VmcbGdtrIdtrSelector,
-    pub ldtr: VmcbSsaSelector,
-    pub idtr: VmcbGdtrIdtrSelector,
-    pub tr: VmcbSsaSelector,
+pub struct VMCBStateSave {
+    pub es: VMCBSSASelector,
+    pub cs: VMCBSSASelector,
+    pub ss: VMCBSSASelector,
+    pub ds: VMCBSSASelector,
+    pub fs: VMCBSSASelector,
+    pub gs: VMCBSSASelector,
+    pub gdtr: VMCBGDTRegIDTRegSelector,
+    pub ldtr: VMCBSSASelector,
+    pub idtr: VMCBGDTRegIDTRegSelector,
+    pub tr: VMCBSSASelector,
     #[skip]
     __: B128,
     #[skip]
@@ -30,7 +30,7 @@ pub struct VmcbStateSave {
     #[skip]
     __: u32,
     #[bits = 64]
-    pub efer: amd64::registers::msr::efer::Efer,
+    pub efer: amd64::registers::msr::efer::ExtendedFeatureEnableReg,
     #[skip]
     __: B128,
     #[skip]
@@ -84,7 +84,7 @@ pub struct VmcbStateSave {
     __: B128,
     /// Only if nested paging is enabled
     #[bits = 64]
-    pub guest_pat: amd64::registers::msr::pat::Pat,
+    pub guest_pat: amd64::registers::msr::pat::PageAttributeTable,
     /// Only of LBR virtualization is enabled
     pub debug_ctl_msr: u64,
     /// Only of LBR virtualization is enabled
@@ -95,7 +95,7 @@ pub struct VmcbStateSave {
     pub last_excp_to: u64,
 }
 
-impl Default for VmcbStateSave {
+impl Default for VMCBStateSave {
     fn default() -> Self {
         Self::new()
     }

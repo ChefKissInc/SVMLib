@@ -7,7 +7,7 @@ use modular_bitfield::prelude::*;
 #[bitfield(bits = 32)]
 #[repr(u32)]
 #[derive(BitfieldSpecifier, Debug, Default, Clone, Copy)]
-pub struct VmcbCleanField {
+pub struct VMCBCleanField {
     pub intercepts: bool,
     pub iopm: bool,
     pub guest_asid: bool,

@@ -1,4 +1,4 @@
-//! Copyright (c) VisualDevelopment 2021-2022.
+//! Copyright (c) ChefKiss Inc 2021-2022.
 //! This project is licensed by the Creative Commons Attribution-NoCommercial-NoDerivatives licence.
 
 #![allow(clippy::if_same_then_else, clippy::eq_op)]

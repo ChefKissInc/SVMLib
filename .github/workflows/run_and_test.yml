@@ -21,8 +21,8 @@ jobs:
       - run: ln -s .. _work
       - uses: actions/checkout@v2
         with:
-          repository: "Firework-OS/AMD64"
-          path: "_work/AMD64"
+          repository: "BoxOperatingSystem/AMD64Lib"
+          path: "_work/AMD64Lib"
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: nightly
@@ -46,8 +46,8 @@ jobs:
       - run: ln -s .. _work
       - uses: actions/checkout@v2
         with:
-          repository: "Firework-OS/AMD64"
-          path: "_work/AMD64"
+          repository: "BoxOperatingSystem/AMD64Lib"
+          path: "_work/AMD64Lib"
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: nightly

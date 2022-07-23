@@ -1,9 +1,6 @@
-# AMD Secure Virtual Machine crate
+# SVMLib
 
-AMD Secure Virtual Machine Rust implementation crate
+The BoxOS AMD SVM implementation crate
 
-The Rust SVM Crate is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
-License.
-
-You should have received a copy of the license along with this work. If not,
-see <http://creativecommons.org/licenses/by-nc-nd/4.0/>.
+This project is licensed with the Creative Commons Attribution-NoCommercial-NoDerivatives license. You should've
+received this license with this project, if not, see [here](https://creativecommons.org/licenses/by-nc-nd/4.0/).

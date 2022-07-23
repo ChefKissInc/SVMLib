@@ -1,9 +1,10 @@
 [package]
 name = "svm"
 version = "0.1.0"
+description = "The BoxOS SVM implementation crate"
 edition = "2021"
 publish = false
-authors = ["VisualDevelopment"]
+authors = ["ChefKiss Inc"]
 license-file = "LICENSE"
 
 [profile.release]
@@ -11,4 +12,4 @@ lto = true
 
 [dependencies]
 modular-bitfield = "0.11.2"
-amd64 = { path = "../AMD64" }
+amd64 = { path = "../AMD64Lib" }

@@ -7,8 +7,13 @@ publish = false
 authors = ["ChefKiss Inc"]
 license-file = "LICENSE"
 
+[profile.dev]
+lto = "thin"
+
 [profile.release]
+opt-level = 3
 lto = true
+strip = true
 
 [dependencies]
 amd64 = { path = "../AMD64Lib" }
